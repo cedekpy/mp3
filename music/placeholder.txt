@@ -1,1 +1,7 @@
+To jest folder na pliki MP3.
+Wgraj tutaj swoje piosenki w formacie .mp3
 
+Przykładowe nazwy:
+- piosenka1.mp3
+- ulubiona.mp3
+- rock.mp3
