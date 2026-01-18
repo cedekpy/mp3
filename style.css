@@ -393,3 +393,47 @@ header h1 {
         font-size: 1.8rem;
     }
 }
+/* Skanowanie */
+.controls-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 100, 100, 0.1);
+    border-radius: 10px;
+}
+
+.scan-button {
+    background: linear-gradient(45deg, #00ff88, #0099ff);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s;
+}
+
+.scan-button:hover {
+    transform: scale(1.05);
+}
+
+#scanStatus {
+    color: #88ffdd;
+    font-size: 0.9rem;
+}
+
+/* Status skanowania */
+.scanning {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
