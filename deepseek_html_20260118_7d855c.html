@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Muzyka | Odtwarzacz MP3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Nagłówek -->
+        <header>
+            <h1><i class="fas fa-music"></i> Odtwarzacz MP3</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Szukaj piosenki lub artysty...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+                <button id="refreshBtn" title="Załaduj ponownie muzykę">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Informacja o ładowaniu -->
+        <div id="loading" class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Wyszukuję okładki...
+        </div>
+
+        <!-- Główna sekcja -->
+        <main>
+            <div class="player-section">
+                <!-- Odtwarzacz -->
+                <div class="player-card">
+                    <div class="album-art">
+                        <img id="currentCover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Okładka">
+                        <div class="vinyl-effect"></div>
+                    </div>
+                    <div class="player-controls">
+                        <h2 id="currentTitle">Wybierz piosenkę</h2>
+                        <h3 id="currentArtist">Artysta</h3>
+                        <div class="progress-container">
+                            <input type="range" id="progressBar" value="0" class="progress-slider">
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                            <button id="playBtn"><i class="fas fa-play"></i></button>
+                            <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up"></i>
+                                <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista utworów -->
+                <div class="playlist-section">
+                    <h3><i class="fas fa-list"></i> Lista utworów (<span id="songCount">0</span>)</h3>
+                    <div class="playlist" id="playlist">
+                        <!-- Lista zostanie wygenerowana przez JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informacje o API -->
+            <div class="api-info">
+                <p><i class="fas fa-info-circle"></i> Okładki pobierane automatycznie z Last.fm API</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Audio element -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
